@@ -1,0 +1,47 @@
+[
+{
+    "model": "cms_site.user",
+    "fields": {
+        "password": "pbkdf2_sha256$260000$I4kWnPK0kvy6ktjBdGt0nm$lMXw1yf+9lpzDCjgEMCle8RNxk68lCkCzcJfnRRJkT4=",
+        "last_login": "2022-04-17T17:40:08Z",
+        "is_superuser": true,
+        "username": "admin@admin.com",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-04-17T17:39:25Z",
+        "email_vrf_token": null,
+        "email_vrf_expiration": null,
+        "email": "admin@admin.com",
+        "email_change": null,
+        "password_reset_token": null,
+        "password_reset_expiration": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "cms_site.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$glozYgRTYuFwTtLCCa9Rom$NEEt4uym7FpCq8r81CqvRh40KIMCU9+FbbUiHtzfOf0=",
+        "last_login": "2022-04-19T15:21:48.563Z",
+        "is_superuser": false,
+        "username": "exuser@email.com",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-04-19T15:15:41.159Z",
+        "email_vrf_token": null,
+        "email_vrf_expiration": null,
+        "email": "exuser@email.com",
+        "email_change": null,
+        "password_reset_token": null,
+        "password_reset_expiration": null,
+        "groups": [1],
+        "user_permissions": []
+    }
+}
+]

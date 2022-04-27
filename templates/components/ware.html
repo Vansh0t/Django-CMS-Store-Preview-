@@ -1,0 +1,10 @@
+{% load thumbnail %}
+<div>
+    <a href="ware-info?id={{ware.id}}"><div class="art-preview" ><img src="{{ ware.image_main|thumbnail_url:'showcase' }}" alt="{{ ware.title }}"></div></a>
+    <a href="ware-info?id={{ware.id}}"><h1>{{ ware.title }}</h1></a>
+        <div>
+            <p>{{ ware.price }}</p>
+            <a href="/ware-info?id={{ware.id}}">Add to cart</a>
+        </div>
+</div>
+    

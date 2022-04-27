@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags %}
+
+{% block main_content %}
+
+<h1 style="margin: 5rem auto; text-align: center;">Shop of contemporary interior paintings</h1>
+
+<div style="position: absolute;
+width: 52rem;
+height: 52rem;
+left: -14rem;
+top: 42rem;
+border-radius: 50%;
+z-index: -1;" class="circle"></div>
+<div style="position: absolute;
+width: 67rem;
+height: 67rem;
+left: 70rem;
+top: 70rem;
+border-radius: 50%;
+z-index: -1;" class="circle"></div>
+<div style="position: absolute;
+width: 22rem;
+height: 22rem;
+left: 15rem;
+top: 142rem;
+border-radius: 50%;
+z-index: -1;" class="circle"></div>
+<div class="slider">
+    <div class="slide-track">
+        {%placeholder img%}
+    </div>
+    <div class="slide-track2">
+        {%placeholder img%}
+    </div>
+</div>
+<div class="filters-wrap">
+    <div class="filters">
+        <a href="{{ request.scheme }}://{{ request.get_host }}" class="{% if not request.GET.f %} active {% endif %}">All</a>
+        {% for filter in data.filters.values %}
+            <a href="{{ request.scheme }}://{{ request.get_host }}/?f={{filter.name}}" class="{% if request.GET.f == filter.name %} active {% endif %}">{{filter.name}}</a>
+        {% endfor %}
+    </div>
+    <div class="filters">
+        <a href="{{ request.scheme }}://{{ request.get_host }}" class="{% if not request.GET.c %} active {% endif %}">All</a>
+        {% for category in data.categories.values %}
+            <a href="{{ request.scheme }}://{{ request.get_host }}/?c={{category.parameter}}" class="{% if request.GET.c == category.parameter %} active {% endif %}">{{category.name}}</a> 
+        {% endfor %}
+    </div>
+</div>
+<svg style="width: 100%;
+    height: 0px;
+    margin: 0 auto 1rem 0;" class="line"></svg>
+<div class="wares-grid">
+    {% for ware in data.wares %}
+    {% include "components/ware.html" with ware=ware %}
+    {% endfor %}
+</div>
+<div id="page-indexer">
+    <input type="hidden" value = "{{data.wares_batch}}" id="batch">
+    <input type="hidden" value = "{{data.wares_len}}" id="len">
+    <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+      </svg></a>
+      <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+      </svg></a>
+</div>
+<div style="height: 100vh;"></div>
+{%endblock%}

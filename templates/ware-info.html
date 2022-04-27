@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags %}
+{% load thumbnail %}
+
+{% block main_content %}
+{% if data.status.is_error %}
+<h1>Not found</h1>
+{% else %}
+
+{% addtoblock "js" %}
+      <script src="/static/jquery.elevatezoom.js" type="text/javascript"></script>
+      <script>
+          //initiate the plugin and pass the id of the div containing gallery images
+            $("#img_01").elevateZoom({  
+                                        //Tech stuff
+                                        gallery:'gal1',
+                                        galleryActiveClass: 'gal-active',
+                                        constrainType:"larger-side",
+                                        //Styling stuff
+                                        zoomWindowWidth:"33vw",
+                                        zoomWindowHeight:"33vw",
+                                        constrainSize:600,//max 600px largest side. Should be equal gallery-current-img div size
+                                        zoomWindowFadeIn: 200,
+			                                  zoomWindowFadeOut: 200,
+                                        easing : 12,
+                                        loadingIcon: 'http://165.22.82.189:8000/static/preloader.gif',
+                                        cursor: 'pointer',
+                                        zoomWindowPosition: "zoom-pos",
+                                      }); 
+
+            //pass the images to Fancybox
+            $("#img_01").bind("click", function(e) {  
+            var ez =   $('#img_01').data('elevateZoom');	
+	        $.fancybox(ez.getGalleryList());
+  return false;
+});
+      </script>
+{% endaddtoblock %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="/static/gallery_style.css"/><link rel="stylesheet" type="text/css" href="/static/style.css"/>{% endaddtoblock %}
+
+
+<div class="ware-info-container">
+  <div class="gallery-container">
+    <div id="gallery-current-img">
+      <img id="img_01" src="{{data.ware.image_main|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_main|thumbnail_url:'max_size'}}"/>
+    </div>
+    
+    <div id="gal1">
+      <div class="img-thumb-container gal-active">
+        <a href="#" data-image="{{data.ware.image_main|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_main|thumbnail_url:'max_size'}}">
+          <img class="img-thumb" src="{{data.ware.image_main|thumbnail_url:'gallery_small'}}" />
+        </a>
+      </div>
+      <div class="img-thumb-container">
+        <a href="#" data-image="{{data.ware.image_sub1|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub1|thumbnail_url:'max_size'}}">
+          <img class="img-thumb" src="{{data.ware.image_sub1|thumbnail_url:'gallery_small'}}" />
+        </a>
+      </div>
+      <div class="img-thumb-container">
+      <a href="#" data-image="{{data.ware.image_sub2|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub2|thumbnail_url:'max_size'}}">
+        <img class="img-thumb" src="{{data.ware.image_sub2|thumbnail_url:'gallery_small'}}" />
+      </a>
+      </div>
+      <div class="img-thumb-container">
+      <a  href="#" data-image="{{data.ware.image_sub3|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub3|thumbnail_url:'max_size'}}">
+        <img class="img-thumb" src="{{data.ware.image_sub3|thumbnail_url:'gallery_small'}}" />
+      </a>
+    </div>
+      <div class="img-thumb-container">
+      <a href="#" data-image="{{data.ware.image_sub4|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub4|thumbnail_url:'max_size'}}">
+        <img class="img-thumb" src="{{data.ware.image_sub4|thumbnail_url:'gallery_small'}}" />
+      </a>
+    </div>
+      <div class="img-thumb-container">
+      <a href="#" data-image="{{data.ware.image_sub5|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub5|thumbnail_url:'max_size'}}">
+        <img class="img-thumb" src="{{data.ware.image_sub5|thumbnail_url:'gallery_small'}}" />
+      </a>
+    </div>
+      <div class="img-thumb-container">
+      <a href="#" data-image="{{data.ware.image_sub6|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub6|thumbnail_url:'max_size'}}">
+        <img class="img-thumb" src="{{data.ware.image_sub6|thumbnail_url:'gallery_small'}}" />
+      </a>
+    </div>
+      <div class="img-thumb-container">
+      <a href="#" data-image="{{data.ware.image_sub7|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub7|thumbnail_url:'max_size'}}">
+        <img class="img-thumb" src="{{data.ware.image_sub7|thumbnail_url:'gallery_small'}}" />
+      </a>
+    </div>
+      <div class="img-thumb-container">
+      <a href="#" data-image="{{data.ware.image_sub8|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub8|thumbnail_url:'max_size'}}">
+        <img class="img-thumb" src="{{data.ware.image_sub8|thumbnail_url:'gallery_small'}}" />
+      </a>
+    </div>
+  </div>
+</div>
+<div id="zoom-pos" class = "ware-params">
+  <h1>{{data.ware.title}}</h1>
+  <p>${{data.ware.normalized_price}}</p>
+  
+  <button onclick="window.location.href='adding ware to cart';">Add To Cart</button>
+
+  <p>Height: {{data.ware.height}} inches<br>
+     Width: {{data.ware.width}} inches</p>
+
+  <p>{{data.ware.description}}</p>
+</div>
+</div>
+{% endif %}
+{%endblock%}

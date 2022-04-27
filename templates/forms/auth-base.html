@@ -1,0 +1,18 @@
+{% extends 'base.html' %}{% load cms_tags sekizai_tags %}
+{%block main_content%}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="/static/form_style.css"/>{% endaddtoblock %}
+<div id='form-container'>
+    <form id="form-main" method="post">
+        {% csrf_token %}
+        {%block auth_form%}
+
+        {%endblock%}
+        <p id='message' {% if data.status.is_error %}style="color:red"{%endif%}>{{data.status.message}}</p>
+    </form>
+    
+</div>
+
+
+{% endblock %}
+
+

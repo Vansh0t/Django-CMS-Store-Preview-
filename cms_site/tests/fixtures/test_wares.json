@@ -1,0 +1,252 @@
+[
+{
+    "model": "cms_site.ware",
+    "pk": 1,
+    "fields": {
+        "title": "Painting 1",
+        "description": "Some cool painting",
+        "width": 22,
+        "height": 22,
+        "quantity": 1,
+        "price": 100.0,
+        "views": 0,
+        "image_main": "wares/fbb983d688644b78add408c1c1999091-il_fullxfull.3038164417_ohl5.jpg",
+        "image_sub1": "wares/3079edd8381749ecb35becd372b88440-IMG_20210304_130208.jpg",
+        "image_sub2": "wares/400fe5e4e88c427f8dcdcf6e978036c9-IMG_20210304_130242.jpg",
+        "image_sub3": "wares/ac649e4c1f7644f8b189f695358ecb4a-IMG_20210304_130321.jpg",
+        "image_sub4": "wares/70d1df1c924543f7b51e24e76cab96b4-interior1.jpg",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            1
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 2,
+    "fields": {
+        "title": "Painting 2",
+        "description": "Another painting",
+        "width": 100,
+        "height": 100,
+        "quantity": 5,
+        "price": 200.0,
+        "views": 0,
+        "image_main": "wares/4fbe6e69ef584e4fa7c03b6c4910f7d5-00760563250c412790a9b0eec747843a-Cut1.jpg.640x640_r8VbsM0.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            2
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 3,
+    "fields": {
+        "title": "Painting 3",
+        "description": "Another painting",
+        "width": 20,
+        "height": 20,
+        "quantity": 1,
+        "price": 1.0,
+        "views": 0,
+        "image_main": "wares/229ce724aec94062af430104c5275861-Cut.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            1
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 4,
+    "fields": {
+        "title": "Painting 5",
+        "description": "Another painting",
+        "width": 20,
+        "height": 20,
+        "quantity": 1,
+        "price": 50.0,
+        "views": 0,
+        "image_main": "wares/4c022b0adf8c48f6a4834db1a3df5aa9-cut.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            1
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 5,
+    "fields": {
+        "title": "Painting 6",
+        "description": "Another painting",
+        "width": 120,
+        "height": 120,
+        "quantity": 1,
+        "price": 300.0,
+        "views": 0,
+        "image_main": "wares/39f1d2a4169c4b18b093165df2539fcd-interior1.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            3
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 6,
+    "fields": {
+        "title": "Painting 7",
+        "description": "Another painting",
+        "width": 25,
+        "height": 25,
+        "quantity": 1,
+        "price": 1.0,
+        "views": 0,
+        "image_main": "wares/4c6630a73c0d431abf7a96e761558a21-Cut.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            2
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 7,
+    "fields": {
+        "title": "Painting 8",
+        "description": "Another painting",
+        "width": 22,
+        "height": 22,
+        "quantity": 1,
+        "price": 1.0,
+        "views": 0,
+        "image_main": "wares/a74c5e6d8a1140fdaf25c997b935ec60-Cut.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            2
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 8,
+    "fields": {
+        "title": "Painting 9",
+        "description": "Another painting",
+        "width": 222,
+        "height": 222,
+        "quantity": 1,
+        "price": 1.0,
+        "views": 0,
+        "image_main": "wares/a89e5c78b0164919961394c1ab98bb26-Cut.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            3
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 9,
+    "fields": {
+        "title": "Painting 10",
+        "description": "Another painting",
+        "width": 33,
+        "height": 33,
+        "quantity": 1,
+        "price": 1.0,
+        "views": 0,
+        "image_main": "wares/e18f45c089d94c92a86f67f8653cbc63-Cut.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            2
+        ]
+    }
+},
+{
+    "model": "cms_site.ware",
+    "pk": 10,
+    "fields": {
+        "title": "Painting 11",
+        "description": "Another painting",
+        "width": 2,
+        "height": 22,
+        "quantity": 1,
+        "price": 1.0,
+        "views": 0,
+        "image_main": "wares/44477927f1b349d9b40b02f30801b46e-00760563250c412790a9b0eec747843a-Cut1.jpg.640x640_kuY3kN8.jpg",
+        "image_sub1": "",
+        "image_sub2": "",
+        "image_sub3": "",
+        "image_sub4": "",
+        "image_sub5": "",
+        "image_sub6": "",
+        "image_sub7": "",
+        "image_sub8": "",
+        "categories": [
+            1
+        ]
+    }
+}
+]

@@ -1,0 +1,27 @@
+
+<div style="
+display:flex;
+flex-direction:column;
+margin-bottom:3px;
+">
+{% if widget.is_initial %}{% if not widget.required %}
+<div style="display:flex">
+<input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}>
+<label for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
+</div>
+{% endif %}
+{{ widget.input_text }}:{% endif %}
+<input type="{{ widget.type }}" name="{{ widget.name }}"
+onchange="
+    if (this.files && this.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        document.getElementById('for-{{widget.attrs.id}}').setAttribute('src', e.target.result);
+    };
+
+    reader.readAsDataURL(this.files[0]);
+}"
+
+{% include "django/forms/widgets/attrs.html" %}>
+<img style="object-fit:contain; max-width:200px; max-height:200px; margin-top:3px;" id="for-{{widget.attrs.id}}" src = '{{ widget.value.url }}'/>
+</div>

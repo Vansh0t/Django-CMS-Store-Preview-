@@ -1,0 +1,26 @@
+[
+{
+    "model": "cms_site.category",
+    "pk": 1,
+    "fields": {
+        "name": "Small",
+        "parameter": "small"
+    }
+},
+{
+    "model": "cms_site.category",
+    "pk": 2,
+    "fields": {
+        "name": "Medium",
+        "parameter": "medium"
+    }
+},
+{
+    "model": "cms_site.category",
+    "pk": 3,
+    "fields": {
+        "name": "Large",
+        "parameter": "large"
+    }
+}
+]

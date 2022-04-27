@@ -1,0 +1,21 @@
+{% load cms_tags sekizai_tags %}
+<html>
+    <head>
+        <title>{% page_attribute "page_title" %}</title>
+        {% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="/static/style.css"/>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="/static/script.js" type="text/javascript"></script>{% endaddtoblock %}
+        {% render_block "css" %}
+    </head>
+    <body>
+
+        {% cms_toolbar %}
+            {% placeholder img %}
+
+        <div class="custom-1" style="color: red;">
+                
+            {% placeholder text %}
+
+        </div>
+        {% render_block "js" %}
+    </body>
+</html>

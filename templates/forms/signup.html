@@ -1,0 +1,7 @@
+{% extends 'forms/auth-base.html' %}{% load cms_tags sekizai_tags %}
+{%block auth_form %}
+<input id="email" type="email" placeholder="Email" name="email">
+<input type="password" placeholder="Password" name="password">
+<input type="password" placeholder="Password (Again)" name="password_confirm">
+<input id = "submit" type="submit" value="Sign Up">
+{% endblock %}

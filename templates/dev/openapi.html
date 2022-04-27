@@ -1,0 +1,12 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <form method="post">
+            {% csrf_token %}
+            <label for="api_file">OpenAPI json: </label>
+            <input id="api_file" type="file" name="api_file">
+            <input type="submit" value="OK">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}{% load cms_tags sekizai_tags menu_tags %}
+{% addtoblock 'js'%}
+<script>
+    
+</script>
+{% endaddtoblock %}
+{%block main_content%}
+<ul>
+    {% show_menu 0 100 100 100 %}
+</ul>
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="/static/form_style.css"/>{% endaddtoblock %}
+<div id='form-container'>
+    {{data}}
+    
+</div>
+<button onclick="addToCart(5, 1)">Test add to cart</button>
+
+<button onclick="removeFromCart(5, (result)=>{$('#dev-request-status').html(result.isSuccess?'Ok':'NOT Ok')})">Test remove from cart</button>
+<p id="dev-request-status"></p>
+{% endblock %}

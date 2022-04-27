@@ -1,0 +1,70 @@
+{% load cms_tags sekizai_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{% page_attribute "page_title" %}</title>
+      {% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="/static/style.css"/>{% endaddtoblock %}
+      {% render_block "css" %}
+      {% addtoblock "js" %}
+      <script src="/static/jquery-3.6.0.min.js" type="text/javascript"></script>
+      <script src="/static/requests.js" type="text/javascript"></script>
+      <script src="/static/script.js" type="text/javascript"></script>
+      <script src="/static/card-hover.js" type="text/javascript"></script>
+      {% endaddtoblock %}
+    </head>
+   
+    <body>
+        <header>
+          <div class="header-wrapper">
+            <a href="{{ request.scheme }}://{{ request.get_host }}" id="brand">Ernst Art</a>
+            <nav class="nav">
+              <ul class="nav-wrapper">
+                <a href="{{ request.scheme }}://{{ request.get_host }}" class="{% if request.path == '/' %} active {% endif %}">Gallery</a>
+                
+                <a href="{{ request.scheme }}://{{ request.get_host }}/contact" class="{% if request.path == '/contact/' %} active {% endif %}">Contact</a>
+                <a href="{{ request.scheme }}://{{ request.get_host }}/about" class="{% if request.path == '/about/' %} active {% endif %}">About</a>
+              </ul>
+            </nav>
+            <nav class="nav">
+              <ul class="nav-wrapper">
+                <a href="{{ request.scheme }}://{{ request.get_host }}/account" class="{% if request.path == '/account/' %} active {% endif %}">Account</a>
+                <a href="{{ request.scheme }}://{{ request.get_host }}/cart" class="{% if request.path == '/cart/' %} active {% endif %}">Cart</a>
+              </ul>
+            </nav>
+          </div>
+          <svg style="width: 100%;
+    height: 0px;
+    margin: 0 auto 1rem 0;" class="line"></svg>
+        </header>
+
+        {% cms_toolbar %}
+
+
+        {% block main_content %}
+        {%endblock%}
+
+       
+
+        <footer>
+          <div id="socials">
+              <a href="https://www.upwork.com/freelancers/~011e3562ae72ed02ea"><svg class="socials-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="24" height="24" fill="url(#pattern0)"/>
+                <defs>
+                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_33_68" transform="scale(0.0208333)"/>
+                </pattern>
+                <image id="image0_33_68" width="48" height="48" xlink:href="data:image/png;base64,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"/>
+                </defs>
+                </svg></a>
+              <a href="mailto:greggkobz@gmail.com"><svg class="socials-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+              </svg></a>
+          </div>
+
+      </footer>
+      {% render_block "js" %}
+    </body>
+    
+</html>

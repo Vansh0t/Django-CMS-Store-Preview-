@@ -1,0 +1,9 @@
+[
+{
+    "model": "cms_site.customer",
+    "pk": 1,
+    "fields": {
+        "user": 3
+    }
+}
+]

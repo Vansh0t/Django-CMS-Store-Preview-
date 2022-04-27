@@ -1,0 +1,28 @@
+{% extends 'base.html' %}{% load cms_tags sekizai_tags %}
+{%block main_content%}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="/static/form_style.css"/>{% endaddtoblock %}
+{% if data.meta.timeout_redirect %}
+    {% addtoblock "js" %}
+        <script>
+            document.getElementById('redirect-msg').innerHTML = " Redirecting to main page in <span id = 'redirect-msg-timer'>5</span>";
+            timer = document.getElementById('redirect-msg-timer');
+            const tm = setInterval(()=>{
+                t = parseInt(timer.innerHTML)
+                if(t != 0) {
+                    t--;
+                    timer.innerHTML = t
+                }
+                else {
+                    window.location.replace("/");
+                    clearInterval(tm)
+                }
+                    
+            }, 1000)
+        </script>
+    {% endaddtoblock %}
+{% endif %}
+<div id='form-container'>
+    <p id='msg' {% if data.status.is_error %}style="color:red"{%endif%}>{{data.status.message}}</p><p id='redirect-msg'></p>
+    
+</div>
+{% endblock %}

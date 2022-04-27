@@ -1,0 +1,18 @@
+[
+{
+    "model": "cms_site.filter",
+    "pk": 4,
+    "fields": {
+        "name": "Size",
+        "parameter": "-size"
+    }
+},
+{
+    "model": "cms_site.filter",
+    "pk": 5,
+    "fields": {
+        "name": "Height",
+        "parameter": "-height"
+    }
+}
+]

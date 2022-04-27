@@ -1,0 +1,14 @@
+{% load cms_tags sekizai_tags %}
+
+{% with '12345'|center:5 as range %}
+{% for c in range %}
+{% if request.GET.p == c %} 
+
+<a href="?p={{c}}" class="active">{{c}}</a>
+{% else %}
+<a href="?p={{c}}">{{c}}</a>
+{% endif %}
+     
+{% endfor %}
+{% endwith %}
+{{data.wares_len}} / {{data.wares_batch}} = {% widthratio data.wares_len data.wares_batch 1 %}

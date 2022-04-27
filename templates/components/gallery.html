@@ -1,0 +1,68 @@
+{% load cms_tags sekizai_tags thumbnail%}
+{% addtoblock "js" %}
+      <script src="/static/jquery.elevatezoom.js" type="text/javascript"></script>
+      <script>
+          //initiate the plugin and pass the id of the div containing gallery images
+            $("#img_01").elevateZoom({  
+                                        //Tech stuff
+                                        gallery:'gal1',
+                                        galleryActiveClass: 'gal-active',
+                                        constrainType:"larger-side",
+                                        //Styling stuff
+                                        zoomWindowWidth:200,
+                                        zoomWindowHeight:200,
+                                        constrainSize:600,//max 600px largest side. Should be equal galler-current-img div size
+                                        zoomWindowFadeIn: 200,
+			                                  zoomWindowFadeOut: 200,
+                                        easing : 12,
+                                        loadingIcon: 'http://165.22.82.189:8000/static/preloader.gif',
+                                        cursor: 'pointer',
+                                      }); 
+
+            //pass the images to Fancybox
+            $("#img_01").bind("click", function(e) {  
+            var ez =   $('#img_01').data('elevateZoom');	
+	        $.fancybox(ez.getGalleryList());
+  return false;
+});
+      </script>
+{% endaddtoblock %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="/static/gallery_style.css"/>{% endaddtoblock %}
+
+<div class="gallery-container">
+    <div id="gallery-current-img">
+      <img id="img_01" style="max-height: 600px; max-width:600px" src="{{data.ware.image_main|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_main|thumbnail_url:'max_size'}}"/>
+    </div>
+    
+
+    <div id="gal1">
+      <a href="#" data-image="{{data.ware.image_main|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_main|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_main|thumbnail_url:'gallery_small'}}" />
+      </a>
+      <a href="#" data-image="{{data.ware.image_sub1|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub1|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_sub1|thumbnail_url:'gallery_small'}}" />
+      </a>
+      <a href="#" data-image="{{data.ware.image_sub2|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub2|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_sub2|thumbnail_url:'gallery_small'}}" />
+      </a>
+      <a href="#" data-image="{{data.ware.image_sub3|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub3|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_sub3|thumbnail_url:'gallery_small'}}" />
+      </a>
+      <a href="#" data-image="{{data.ware.image_sub4|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub4|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_sub4|thumbnail_url:'gallery_small'}}" />
+      </a>
+      <a href="#" data-image="{{data.ware.image_sub5|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub5|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_sub5|thumbnail_url:'gallery_small'}}" />
+      </a>
+      <a href="#" data-image="{{data.ware.image_sub6|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub6|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_sub6|thumbnail_url:'gallery_small'}}" />
+      </a>
+      <a href="#" data-image="{{data.ware.image_sub7|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub7|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_sub7|thumbnail_url:'gallery_small'}}" />
+      </a>
+      <a href="#" data-image="{{data.ware.image_sub8|thumbnail_url:'gallery_big'}}" data-zoom-image="{{data.ware.image_sub8|thumbnail_url:'max_size'}}">
+        <img id="img_01" src="{{data.ware.image_sub8|thumbnail_url:'gallery_small'}}" />
+      </a>
+
+    </div>
+</div>
